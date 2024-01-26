@@ -5,6 +5,7 @@ import "./globals.css";
 import { SessionProvider } from "@/components/SessionProvider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import Login from "@/components/Login";
 
 export const metadata: Metadata = {
   title: "chatGPT Clone",
@@ -20,17 +21,22 @@ export default async function RootLayout({
 
   return (
     <html>
-      <SessionProvider session={session}>
-        <body>
-          <div className="flex">
-            <div className="bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]">
-              <Sidebar />
+      <body>
+        <SessionProvider session={session}>
+          {!session ? (
+            <Login />
+          ) : (
+
+            <div className="flex">
+              <div className="bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]">
+                <Sidebar />
+              </div>
+              {/* <ClientProvider /> - Toast Notifications */}
+              <div className="flex-1 bg-[#343541]">{children}</div>
             </div>
-            {/* <ClientProvider /> - Toast Notifications */}
-            <div className="flex-1 bg-[#343541]">{children}</div>
-          </div>
-        </body>
-      </SessionProvider>
+          )}
+        </SessionProvider>
+      </body>
     </html>
   );
 }
