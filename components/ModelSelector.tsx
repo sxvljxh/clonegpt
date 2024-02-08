@@ -12,16 +12,17 @@ function ModelSelector() {
   });
 
   return (
-    <div>
+    <div className="mt-2">
       <Select
+        className="mt-2"
         classNames={{
-          control: (state) => "bg-[#434654] border-[#434654]",
+          control: () => "bg-[#434654] border-[#434654] text-white",
         }}
         onChange={(e) => setModel(e.value)}
         menuPosition="fixed"
         isLoading={isLoading}
         isSearchable
-        options={models.modelOptions}
+        options={models?.modelOptions}
         defaultValue={model}
         placeholder={model}
       />
