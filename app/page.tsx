@@ -14,9 +14,9 @@ function Home() {
           </div>
 
           <div className="space-y-2">
-            <p className="infoText">"Explain Something to me"</p>
-            <p className="infoText">"What is the difference between a dog and a cat"</p>
-            <p className="infoText">"What is the color of the sun?"</p>
+            <p className="infoText">&quot;Explain Something to me&quot;</p>
+            <p className="infoText">&quot;What is the difference between a dog and a cat&quot;</p>
+            <p className="infoText">&quot;What is the color of the sun?&quot;</p>
           </div>
         </div>
 
@@ -28,7 +28,7 @@ function Home() {
 
           <div className="space-y-2">
             <p className="infoText">Change the ChatGPT Model to use</p>
-            <p className="infoText">Messages are stored in Firebase's Firestore</p>
+            <p className="infoText">Messages are stored in Firebase&apos;s Firestore</p>
             <p className="infoText">Hot Toast notifications when ChatGPT is thinking!</p>
           </div>
         </div>

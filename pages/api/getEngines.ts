@@ -24,7 +24,7 @@ export default async function handler(
     })
     .then((response) => response.data.data);
 
-  const modelOptions = models.map((model: Option ) => ({
+  const modelOptions = models.map((model: { id: any; }) => ({
     value: model.id,
     label: model.id,
   }));
